@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computación en la Nube</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #eceff1);
+      margin: 0; padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #0288d1;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    h2 {
+      cursor: pointer;
+      background: #b3e5fc;
+      margin: 0;
+      padding: 15px 20px;
+      border-top: 1px solid #81d4fa;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    h2:hover {
+      background-color: #81d4fa;
+    }
+    section {
+      padding: 25px 40px;
+      display: none;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+    section.active {
+      display: block;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #b0bec5;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9em;
+      margin-top: 40px;
+      color: #333;
+    }
+    .test-question {
+      margin-bottom: 18px;
+    }
+    .test-question p {
+      margin: 0 0 6px 0;
+      font-weight: bold;
+    }
+    .test-question label {
+      display: block;
+      margin-left: 20px;
+      cursor: pointer;
+      margin-bottom: 4px;
+      user-select: none;
+    }
+    .btn-submit {
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-submit:hover {
+      background-color: #026aa7;
+    }
+    .test-result {
+      background-color: #c8e6c9;
+      padding: 12px;
+      margin-top: 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Computación en la Nube</h1>
+  <p>Una introducción completa e interactiva al mundo de la computación en la nube</p>
+</header>
+
+<!-- Secciones de contenido -->
+
+<h2 onclick="toggleSection('introduccion')">¿Qué es la computación en la nube?</h2>
+<section id="introduccion">
+  <p>La computación en la nube es una tecnología que permite la entrega de servicios informáticos a través de Internet. Esto incluye desde almacenamiento de datos hasta aplicaciones complejas que se ejecutan en servidores remotos. A diferencia de los sistemas tradicionales que requieren hardware y software local, la nube ofrece recursos flexibles y escalables sin que el usuario necesite preocuparse por la infraestructura física.</p>
+  
+  <p>Con la computación en la nube, las empresas y usuarios pueden acceder a recursos desde cualquier lugar y dispositivo, fomentando la movilidad y el trabajo colaborativo. Esto ha revolucionado la forma en que se diseñan, desarrollan y distribuyen las aplicaciones, facilitando además la innovación tecnológica.</p>
+  
+  <p>Los principales proveedores de servicios en la nube incluyen Amazon Web Services (AWS), Microsoft Azure y Google Cloud Platform (GCP), entre otros.</p>
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cloud_computing_icon.svg" alt="Icono de computación en la nube" />
+  
+  <p><strong>Historia breve:</strong> El concepto de computación en la nube comenzó a popularizarse en la década de 2000, cuando el aumento de la velocidad de Internet y la capacidad de almacenamiento remoto hicieron posible que los servicios se ofrecieran como recursos bajo demanda.</p>
+</section>
+
+<h2 onclick="toggleSection('modelos')">Modelos de servicio en la nube</h2>
+<section id="modelos">
+  <p>Existen tres modelos principales de servicios en la nube, cada uno con características y niveles de control distintos para los usuarios:</p>
+  <ul>
+    <li><strong>IaaS (Infrastructure as a Service):</strong> Proporciona infraestructura básica, como servidores virtuales, almacenamiento y redes. El usuario tiene control sobre el sistema operativo y aplicaciones instaladas. Ejemplo: Amazon EC2.</li>
+    <li><strong>PaaS (Platform as a Service):</strong> Ofrece una plataforma completa para desarrollo y despliegue de aplicaciones, gestionando el sistema operativo y el middleware. Ejemplo: Google App Engine.</li>
+    <li><strong>SaaS (Software as a Service):</strong> Permite utilizar aplicaciones completas directamente desde el navegador, sin instalación ni gestión del sistema. Ejemplo: Microsoft 365, Gmail.</li>
+  </ul>
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cloud_computing_layers.svg/600px-Cloud_computing_layers.svg.png" alt="Capas y modelos de computación en la nube" />
+  
+  <p>Estos modelos permiten a las organizaciones elegir la solución que mejor se adapte a sus necesidades de control, flexibilidad y coste.</p>
+  
+  <p>Además, la nube puede ser pública, privada o híbrida, dependiendo de quién administra los recursos y dónde están alojados.</p>
+</section>
+
+<h2 onclick="toggleSection('ventajas')">Ventajas de la computación en la nube</h2>
+<section id="ventajas">
+  <p>Adoptar la computación en la nube ofrece múltiples beneficios para empresas y usuarios:</p>
+  <ul>
+    <li><strong>Escalabilidad dinámica:</strong> Puedes ajustar recursos (almacenamiento, potencia de cálculo) según la demanda, evitando gastos innecesarios.</li>
+    <li><strong>Acceso global:</strong> La nube permite que equipos distribuidos en diferentes ubicaciones trabajen sobre los mismos recursos en tiempo real.</li>
+    <li><strong>Reducción de costos:</strong> Menor inversión en hardware, mantenimiento y personal especializado para administrar infraestructuras propias.</li>
+    <li><strong>Seguridad y respaldo:</strong> Los proveedores suelen contar con sistemas avanzados de seguridad y respaldos automáticos para proteger los datos.</li>
+    <li><strong>Actualizaciones automáticas:</strong> Las aplicaciones en la nube se actualizan constantemente sin que los usuarios tengan que intervenir.</li>
+    <li><strong>Innovación acelerada:</strong> Nuevas tecnologías como inteligencia artificial, análisis de datos y machine learning son accesibles para todo tipo de organizaciones gracias a la nube.</li>
+  </ul>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Cloud_benefits_diagram.png" alt="Beneficios de la computación en la nube" />
+</section>
+
+<h2 onclick="toggleSection('riesgos')">Riesgos y desafíos en la nube</h2>
+<section id="riesgos">
+  <p>A pesar de sus ventajas, la computación en la nube presenta algunos desafíos y riesgos que es importante considerar:</p>
+  <ul>
+    <li><strong>Privacidad y protección de datos:</strong> Al almacenar información en servidores externos, existe el riesgo de vulnerabilidades o accesos no autorizados.</li>
+    <li><strong>Dependencia del proveedor:</strong> Cambios en políticas, precios o disponibilidad del proveedor pueden afectar a las empresas que dependen completamente de un solo servicio.</li>
+    <li><strong>Conectividad necesaria:</strong> Se requiere una conexión a Internet estable y rápida para garantizar el acceso continuo a los servicios.</li>
+    <li><strong>Regulaciones y cumplimiento:</strong> Algunas industrias tienen normativas estrictas sobre dónde y cómo deben almacenarse los datos, lo que puede complicar el uso de la nube.</li>
+    <li><strong>Riesgos de pérdida de datos:</strong> Aunque la nube ofrece respaldo, siempre existe la posibilidad de errores humanos o fallos técnicos que afecten la disponibilidad de información.</li>
+  </ul>
+</section>
+
+<h2 onclick="toggleSection('aplicaciones')">Aplicaciones prácticas y futuro de la nube</h2>
+<section id="aplicaciones">
+  <p>La computación en la nube está transformando sectores como:</p>
+  <ul>
+    <li><strong>Educación:</strong> Plataformas virtuales, aulas digitales y recursos compartidos para estudiantes y profesores.</li>
+    <li><strong>Salud:</strong> Gestión de datos clínicos, telemedicina y análisis de grandes volúmenes de información para investigación.</li>
+    <li><strong>Comercio:</strong> Comercio electrónico, gestión de inventarios y análisis de comportamiento de clientes en tiempo real.</li>
+    <li><strong>Entretenimiento:</strong> Streaming de video y música, juegos online con servidores en la nube.</li>
+    <li><strong>Innovación tecnológica:</strong> Desarrollo de inteligencia artificial, Internet de las cosas (IoT) y computación de borde.</li>
+  </ul>
+  
+  <p>El futuro de la nube apunta a una integración mayor con tecnologías emergentes, mayor automatización y accesibilidad, y la consolidación de la nube híbrida y multi-nube para aprovechar lo mejor de varios proveedores.</p>
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Cloud_computing_future_technology.png" alt="Futuro de la computación en la nube" />
+</section>
+
+<!-- Sección Tests -->
+
+<h2 onclick="toggleSection('test1')">Test 1 - Conceptos generales</h2>
+<section id="test1">
+  <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
+    <div class="test-question">
+      <p>1. ¿Qué es la computación en la nube?</p>
+      <label><input type="radio" name="q1" value="a" required> Uso de hardware local exclusivamente</label>
+      <label><input type="radio" name="q1" value="b"> Acceso remoto a servicios informáticos vía Internet</label>
+      <label><input type="radio" name="q1" value="c"> Solo almacenamiento de datos en discos duros externos</label>
+    </div>
+    <div class="test-question">
+      <p>2. ¿Cuál es uno de los beneficios principales de la nube?</p>
+      <label><input type="radio" name="q2" value="a" required> Alta inversión en infraestructura</label>
+      <label><input type="radio" name="q2" value="b"> Flexibilidad y escalabilidad</label>
+      <label><input type="radio" name="q2" value="c"> Necesidad de conexión local</label>
+    </div>
+    <div class="test-question">
+      <p>3. ¿Qué proveedores son populares en computación en la nube?</p>
+      <label><input type="radio" name="q3" value="a" required> Amazon AWS, Microsoft Azure, Google Cloud</label>
+      <label><input type="radio" name="q3" value="b"> Facebook, Twitter, Instagram</label>
+      <label><input type="radio" name="q3" value="c"> Netflix, Spotify, Hulu</label>
+    </div>
+    <div class="test-question">
+      <p>4. ¿Cuál es una característica de la nube?</p>
+      <label><input type="radio" name="q4" value="a" required> Recursos fijos y estáticos</label>
+      <label><input type="radio" name="q4" value="b"> Recursos escalables bajo demanda</label>
+      <label><input type="radio" name="q4" value="c"> No accesible remotamente</label>
+    </div>
+    <div class="test-question">
+      <p>5. ¿Qué década marcó la popularización de la computación en la nube?</p>
+      <label><input type="radio" name="q5" value="a" required> Década de 1980</label>
+      <label><input type="radio" name="q5" value="b"> Década de 2000</label>
+      <label><input type="radio" name="q5" value="c"> Década de 1970</label>
+    </div>
+    <div class="test-question">
+      <p>6. ¿Qué tecnología facilita la computación en la nube?</p>
+      <label><input type="radio" name="q6" value="a" required> Redes de alta velocidad</label>
+      <label><input type="radio" name="q6" value="b"> Discos duros externos</label>
+      <label><input type="radio" name="q6" value="c"> Cámaras digitales</label>
+    </div>
+    <div class="test-question">
+      <p>7. ¿Qué permite la nube en cuanto a movilidad?</p>
+      <label><input type="radio" name="q7" value="a" required> Uso solo en una ubicación</label>
+      <label><input type="radio" name="q7" value="b"> Acceso desde múltiples dispositivos y lugares</label>
+      <label><input type="radio" name="q7" value="c"> Solo uso en oficinas físicas</label>
+    </div>
+    <div class="test-question">
+      <p>8. ¿Cuál de estas NO es una ventaja de la nube?</p>
+      <label><input type="radio" name="q8" value="a" required> Escalabilidad</label>
+      <label><input type="radio" name="q8" value="b"> Alto costo de mantenimiento propio</label>
+      <label><input type="radio" name="q8" value="c"> Acceso remoto</label>
+    </div>
+    <div class="test-question">
+      <p>9. ¿Qué se necesita para usar servicios en la nube?</p>
+      <label><input type="radio" name="q9" value="a" required> Conexión a Internet</label>
+      <label><input type="radio" name="q9" value="b"> Equipo sin conexión</label>
+      <label><input type="radio" name="q9" value="c"> Cable USB</label>
+    </div>
+    <div class="test-question">
+      <p>10. ¿Qué tipo de aplicación es típica en SaaS?</p>
+      <label><input type="radio" name="q10" value="a" required> Software instalado localmente</label>
+      <label><input type="radio" name="q10" value="b"> Aplicación accesible desde navegador</label>
+      <label><input type="radio" name="q10" value="c"> Sistema operativo completo</label>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Test 1</button>
+    <div id="result1" class="test-result"></div>
+  </form>
+</section>
+
+<h2 onclick="toggleSection('test2')">Test 2 - Modelos de Servicio</h2>
+<section id="test2">
+  <form id="quizForm2" onsubmit="return submitQuiz('quizForm2', 'result2')">
+    <div class="test-question">
+      <p>1. ¿Qué significa IaaS?</p>
+      <label><input type="radio" name="q1" value="a" required> Infrastructure as a Service</label>
+      <label><input type="radio" name="q1" value="b"> Internet as a Service</label>
+      <label><input type="radio" name="q1" value="c"> Integration as a Service</label>
+    </div>
+    <div class="test-question">
+      <p>2. ¿Cuál es el nivel de control en IaaS?</p>
+      <label><input type="radio" name="q2" value="a" required> Control total sobre infraestructura y software</label>
+      <label><input type="radio" name="q2" value="b"> Solo uso de aplicaciones preinstaladas</label>
+      <label><input type="radio" name="q2" value="c"> Control sobre hardware sin software</label>
+    </div>
+    <div class="test-question">
+      <p>3. ¿Qué ofrece PaaS?</p>
+      <label><input type="radio" name="q3" value="a" required> Plataforma completa para desarrollo de aplicaciones</label>
+      <label><input type="radio" name="q3" value="b"> Solo almacenamiento de datos</label>
+      <label><input type="radio" name="q3" value="c"> Aplicaciones listas para usar</label>
+    </div>
+    <div class="test-question">
+      <p>4. ¿Cuál es una característica de SaaS?</p>
+      <label><input type="radio" name="q4" value="a" required> Aplicaciones accesibles vía navegador</label>
+      <label><input type="radio" name="q4" value="b"> Infraestructura física propia</label>
+      <label><input type="radio" name="q4" value="c"> Plataformas de desarrollo</label>
+    </div>
+    <div class="test-question">
+      <p>5. ¿Cuál modelo es más adecuado para desarrolladores?</p>
+      <label><input type="radio" name="q5" value="a" required> PaaS</label>
+      <label><input type="radio" name="q5" value="b"> SaaS</label>
+      <label><input type="radio" name="q5" value="c"> IaaS</label>
+    </div>
+    <div class="test-question">
+      <p>6. ¿Qué modelo ofrece software listo para el usuario final?</p>
+      <label><input type="radio" name="q6" value="a" required> SaaS</label>
+      <label><input type="radio" name="q6" value="b"> PaaS</label>
+      <label><input type="radio" name="q6" value="c"> IaaS</label>
+    </div>
+    <div class="test-question">
+      <p>7. ¿Cuál modelo gestiona el sistema operativo?</p>
+      <label><input type="radio" name="q7" value="a" required> PaaS</label>
+      <label><input type="radio" name="q7" value="b"> IaaS</label>
+      <label><input type="radio" name="q7" value="c"> SaaS</label>
+    </div>
+    <div class="test-question">
+      <p>8. ¿Qué modelo deja al usuario gestionar las aplicaciones?</p>
+      <label><input type="radio" name="q8" value="a" required> IaaS</label>
+      <label><input type="radio" name="q8" value="b"> SaaS</label>
+      <label><input type="radio" name="q8" value="c"> PaaS</label>
+    </div>
+    <div class="test-question">
+      <p>9. ¿Cuál modelo suele ser el más sencillo para usuarios sin conocimientos técnicos?</p>
+      <label><input type="radio" name="q9" value="a" required> SaaS</label>
+      <label><input type="radio" name="q9" value="b"> IaaS</label>
+      <label><input type="radio" name="q9" value="c"> PaaS</label>
+    </div>
+    <div class="test-question">
+      <p>10. ¿Qué modelo es el más flexible en términos de control?</p>
+      <label><input type="radio" name="q10" value="a" required> IaaS</label>
+      <label><input type="radio" name="q10" value="b"> SaaS</label>
+      <label><input type="radio" name="q10" value="c"> PaaS</label>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Test 2</button>
+    <div id="result2" class="test-result"></div>
+  </form>
+</section>
+
+<h2 onclick="toggleSection('test3')">Test 3 - Ventajas</h2>
+<section id="test3">
+  <form id="quizForm3" onsubmit="return submitQuiz('quizForm3', 'result3')">
+    <div class="test-question">
+      <p>1. ¿Cuál es una ventaja de la computación en la nube?</p>
+      <label><input type="radio" name="q1" value="a" required> Costos elevados en infraestructura</label>
+      <label><input type="radio" name="q1" value="b"> Escalabilidad</label>
+      <label><input type="radio" name="q1" value="c"> Dependencia total de hardware local</label>
+    </div>
+    <div class="test-question">
+      <p>2. ¿Qué permite el acceso global a recursos?</p>
+      <label><input type="radio" name="q2" value="a" required> Trabajar solo desde un dispositivo</label>
+      <label><input type="radio" name="q2" value="b"> Colaborar desde cualquier lugar</label>
+      <label><input type="radio" name="q2" value="c"> Evitar el trabajo en equipo</label>
+    </div>
+    <div class="test-question">
+      <p>3. ¿Qué ofrece seguridad en la nube?</p>
+      <label><input type="radio" name="q3" value="a" required> Respaldos automáticos y sistemas avanzados</label>
+      <label><input type="radio" name="q3" value="b"> Solo protección física en oficina</label>
+      <label><input type="radio" name="q3" value="c"> No se ofrecen garantías de seguridad</label>
+    </div>
+    <div class="test-question">
+      <p>4. ¿Qué significa reducción de costos?</p>
+      <label><input type="radio" name="q4" value="a" required> Menos inversión en hardware y mantenimiento</label>
+      <label><input type="radio" name="q4" value="b"> Más gastos en equipos</label>
+      <label><input type="radio" name="q4" value="c"> Costos fijos elevados</label>
+    </div>
+    <div class="test-question">
+      <p>5. ¿Qué ventaja tiene la actualización automática?</p>
+      <label><input type="radio" name="q5" value="a" required> El usuario debe instalar manualmente</label>
+      <label><input type="radio" name="q5" value="b"> El software se actualiza sin intervención del usuario</label>
+      <label><input type="radio" name="q5" value="c"> No hay actualizaciones</label>
+    </div>
+    <div class="test-question">
+      <p>6. ¿Qué impacto tiene la nube en la innovación?</p>
+      <label><input type="radio" name="q6" value="a" required> Acceso a tecnologías avanzadas</label>
+      <label><input type="radio" name="q6" value="b"> Limitación tecnológica</label>
+      <label><input type="radio" name="q6" value="c"> No influencia</label>
+    </div>
+    <div class="test-question">
+      <p>7. ¿Cuál es una ventaja para la movilidad?</p>
+      <label><input type="radio" name="q7" value="a" required> Acceso desde múltiples dispositivos</label>
+      <label><input type="radio" name="q7" value="b"> Restricción a un solo dispositivo</label>
+      <label><input type="radio" name="q7" value="c"> Uso solo presencial</label>
+    </div>
+    <div class="test-question">
+      <p>8. ¿Qué ahorro genera la nube?</p>
+      <label><input type="radio" name="q8" value="a" required> Menos gastos en personal técnico y hardware</label>
+      <label><input type="radio" name="q8" value="b"> Más gastos en mantenimiento</label>
+      <label><input type="radio" name="q8" value="c"> No hay ahorro</label>
+    </div>
+    <div class="test-question">
+      <p>9. ¿Qué facilita la nube para empresas pequeñas?</p>
+      <label><input type="radio" name="q9" value="a" required> Acceso a tecnología que antes solo tenían grandes empresas</label>
+      <label><input type="radio" name="q9" value="b"> Solo grandes empresas pueden usarla</label>
+      <label><input type="radio" name="q9" value="c"> No es útil para pymes</label>
+    </div>
+    <div class="test-question">
+      <p>10. ¿Cuál ventaja permite un trabajo más colaborativo?</p>
+      <label><input type="radio" name="q10" value="a" required> Acceso remoto y compartido de datos</label>
+      <label><input type="radio" name="q10" value="b"> Trabajo solo individual</label>
+      <label><input type="radio" name="q10" value="c"> Restricción de acceso</label>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Test 3</button>
+    <div id="result3" class="test-result"></div>
+  </form>
+</section>
+
+<h2 onclick="toggleSection('test4')">Test 4 - Riesgos y desafíos</h2>
+<section id="test4">
+  <form id="quizForm4" onsubmit="return submitQuiz('quizForm4', 'result4')">
+    <div class="test-question">
+      <p>1. ¿Cuál es un riesgo al usar la nube?</p>
+      <label><input type="radio" name="q1" value="a" required> Pérdida de control sobre datos sensibles</label>
+      <label><input type="radio" name="q1" value="b"> No tener conexión a Internet</label>
+      <label><input type="radio" name="q1" value="c"> Uso exclusivo de hardware local</label>
+    </div>
+    <div class="test-question">
+      <p>2. ¿Qué problema genera la dependencia del proveedor?</p>
+      <label><input type="radio" name="q2" value="a" required> Cambios inesperados en servicios o precios</label>
+      <label><input type="radio" name="q2" value="b"> Control absoluto del usuario</label>
+      <label><input type="radio" name="q2" value="c"> Independencia tecnológica</label>
+    </div>
+    <div class="test-question">
+      <p>3. ¿Qué se necesita para evitar problemas de conectividad?</p>
+      <label><input type="radio" name="q3" value="a" required> Internet estable y rápido</label>
+      <label><input type="radio" name="q3" value="b"> Equipo sin conexión</label>
+      <label><input type="radio" name="q3" value="c"> Cable USB</label>
+    </div>
+    <div class="test-question">
+      <p>4. ¿Cuál es un desafío en la seguridad de la nube?</p>
+      <label><input type="radio" name="q4" value="a" required> Proteger datos contra accesos no autorizados</label>
+      <label><input type="radio" name="q4" value="b"> No usar contraseñas</label>
+      <label><input type="radio" name="q4" value="c"> Compartir credenciales</label>
+    </div>
+    <div class="test-question">
+      <p>5. ¿Qué complicación puede surgir con la compatibilidad?</p>
+      <label><input type="radio" name="q5" value="a" required> Dificultad para integrar aplicaciones</label>
+      <label><input type="radio" name="q5" value="b"> Compatibilidad total automática</label>
+      <label><input type="radio" name="q5" value="c"> No usar software en la nube</label>
+    </div>
+    <div class="test-question">
+      <p>6. ¿Qué riesgo existe si el proveedor falla?</p>
+      <label><input type="radio" name="q6" value="a" required> Pérdida de acceso a servicios y datos</label>
+      <label><input type="radio" name="q6" value="b"> Control total del usuario</label>
+      <label><input type="radio" name="q6" value="c"> Seguridad absoluta</label>
+    </div>
+    <div class="test-question">
+      <p>7. ¿Qué desafío hay con la privacidad?</p>
+      <label><input type="radio" name="q7" value="a" required> Asegurar la confidencialidad de datos</label>
+      <label><input type="radio" name="q7" value="b"> Compartir información libremente</label>
+      <label><input type="radio" name="q7" value="c"> No proteger datos</label>
+    </div>
+    <div class="test-question">
+      <p>8. ¿Qué problema puede causar la latencia?</p>
+      <label><input type="radio" name="q8" value="a" required> Retrasos en el acceso y respuesta</label>
+      <label><input type="radio" name="q8" value="b"> Respuesta inmediata</label>
+      <label><input type="radio" name="q8" value="c"> Sin conexión</label>
+    </div>
+    <div class="test-question">
+      <p>9. ¿Qué problema genera la falta de control?</p>
+      <label><input type="radio" name="q9" value="a" required> Incertidumbre en la gestión de datos</label>
+      <label><input type="radio" name="q9" value="b"> Control total del usuario</label>
+      <label><input type="radio" name="q9" value="c"> Mayor seguridad</label>
+    </div>
+    <div class="test-question">
+      <p>10. ¿Qué factor afecta la recuperación ante desastres?</p>
+      <label><input type="radio" name="q10" value="a" required> Planes y respaldo adecuados</label>
+      <label><input type="radio" name="q10" value="b"> No planificar</label>
+      <label><input type="radio" name="q10" value="c"> Evitar respaldos</label>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Test 4</button>
+    <div id="result4" class="test-result"></div>
+  </form>
+</section>
+
+<script>
+function toggleSection(id) {
+  const section = document.getElementById(id);
+  section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+function submitQuiz(formId, resultId) {
+  const form = document.getElementById(formId);
+  const resultDiv = document.getElementById(resultId);
+  let score = 0;
+  const totalQuestions = form.querySelectorAll('.test-question').length;
+
+  const answersKey = {
+    quizForm1: ['a','b','b','a','a','b','c','a','a','a'],
+    quizForm2: ['a','a','c','a','a','a','a','a','a','a'],
+    quizForm3: ['b','b','a','a','b','a','a','a','a','a'],
+    quizForm4: ['a','a','a','a','a','a','a','a','a','a']
+  };
+
+  const userAnswers = new FormData(form);
+  let unanswered = false;
+
+  for(let i=1; i<=totalQuestions; i++) {
+    const answer = userAnswers.get('q'+i);
+    if(!answer) {
+      unanswered = true;
+      break;
+    }
+    if(answer === answersKey[formId][i-1]) {
+      score++;
+    }
+  }
+
+  if(unanswered) {
+    alert("Por favor, responde todas las preguntas antes de enviar.");
+    return false;
+  }
+
+  resultDiv.textContent = `Puntuación: ${score} / ${totalQuestions}`;
+  return false;
+}
+</script>
+
+<style>
+  section {
+    display: none;
+    margin-bottom: 20px;
+  }
+  .test-question {
+    margin-bottom: 15px;
+  }
+  .btn-submit {
+    margin-top: 10px;
+  }
+  .test-result {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
